@@ -1,31 +1,97 @@
-<ui version="4.0" >
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
  <class>EestiMetsaMaskDialogBase</class>
- <widget class="QDialog" name="EestiMetsaMaskDialogBase" >
-  <property name="geometry" >
+ <widget class="QDialog" name="EestiMetsaMaskDialogBase">
+  <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
     <width>400</width>
-    <height>300</height>
+    <height>220</height>
    </rect>
   </property>
-  <property name="windowTitle" >
-   <string>Eesti metsamaski arvutus</string>
+  <property name="windowTitle">
+   <string>Eesti metsamaski andmete allalaadimine</string>
   </property>
-  <widget class="QDialogButtonBox" name="button_box" >
-   <property name="geometry" >
+  <widget class="QDialogButtonBox" name="button_box">
+   <property name="geometry">
     <rect>
-     <x>30</x>
-     <y>240</y>
+     <x>50</x>
+     <y>180</y>
      <width>341</width>
      <height>32</height>
     </rect>
    </property>
-   <property name="orientation" >
+   <property name="orientation">
     <enum>Qt::Horizontal</enum>
    </property>
-   <property name="standardButtons" >
+   <property name="standardButtons">
     <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="le_sqlite_path">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>40</y>
+     <width>271</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <property name="readOnly">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btn_select_sqlite">
+   <property name="geometry">
+    <rect>
+     <x>300</x>
+     <y>40</y>
+     <width>81</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Vali...</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>20</y>
+     <width>151</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Vali andmebaasi fail (SQLite):</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btn_download">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>90</y>
+     <width>361</width>
+     <height>32</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Laadi failid alla</string>
+   </property>
+  </widget>
+  <widget class="QProgressBar" name="progress_bar">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>140</y>
+     <width>361</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="value">
+    <number>0</number>
    </property>
   </widget>
  </widget>
@@ -37,13 +103,13 @@
    <receiver>EestiMetsaMaskDialogBase</receiver>
    <slot>accept()</slot>
    <hints>
-    <hint type="source_label" >
+    <hint type="sourcelabel">
      <x>248</x>
-     <y>254</y>
+     <y>205</y>
     </hint>
-    <hint type="destination_label" >
+    <hint type="destinationlabel">
      <x>157</x>
-     <y>274</y>
+     <y>219</y>
     </hint>
    </hints>
   </connection>
@@ -53,13 +119,13 @@
    <receiver>EestiMetsaMaskDialogBase</receiver>
    <slot>reject()</slot>
    <hints>
-    <hint type="source_label" >
+    <hint type="sourcelabel">
      <x>316</x>
-     <y>260</y>
+     <y>211</y>
     </hint>
-    <hint type="destination_label" >
+    <hint type="destinationlabel">
      <x>286</x>
-     <y>274</y>
+     <y>219</y>
     </hint>
    </hints>
   </connection>
